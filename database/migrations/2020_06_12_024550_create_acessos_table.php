@@ -25,9 +25,11 @@ class CreateAcessosTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
+        });
+
+        Schema::table('user_acesso', function ($table) {
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('acesso_id')->references('id')->on('acessos');
-
         });
     }
 

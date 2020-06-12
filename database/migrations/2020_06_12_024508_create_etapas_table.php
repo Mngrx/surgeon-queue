@@ -26,6 +26,10 @@ class CreateEtapasTable extends Migration
             $table->unsignedBigInteger('etapa_id');
             $table->timestamps();
 
+            
+        });
+
+        Schema::table('cirurgia_etapa', function ($table) {
             $table->foreign('cirurgia_id')->references('id')->on('cirurgias');
             $table->foreign('etapa_id')->references('id')->on('etapas');
         });

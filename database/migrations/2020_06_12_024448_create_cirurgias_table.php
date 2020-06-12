@@ -17,12 +17,15 @@ class CreateCirurgiasTable extends Migration
             $table->id();
             $table->unsignedBigInteger('paciente_id');
 
-            $table->datatime('horario');
+            $table->datetime('horario');
             $table->string('sala');
             $table->string('equipamento');
 
             $table->timestamps();
 
+        });
+
+        Schema::table('cirurgias', function ($table) {
             $table->foreign('paciente_id')->references('id')->on('pacientes');
         });
     }

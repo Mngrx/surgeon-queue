@@ -21,4 +21,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'CalendarioController@index')->middleware('auth');
+Route::get('/evento', 'CalendarioController@getCirurgiasAjax')->middleware('auth');
+Route::get('/confirmar/{id}', 'CalendarioController@confirmarEtapa')->middleware('auth');
 Route::post('/criar', 'CalendarioController@store')->middleware('auth');
